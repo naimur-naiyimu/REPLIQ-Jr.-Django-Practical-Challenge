@@ -25,5 +25,6 @@ urlpatterns = [
 
     #App url
     path('', include('app.urls')),
+    path('', include('subscribers.urls')),
 
 ]

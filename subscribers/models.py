@@ -1,5 +1,4 @@
 from django.db import models
-from app.models import Company
 
 class PhoneCompany(models.Model):
     name = models.CharField(max_length=255)
