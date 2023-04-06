@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'subscribers',
     'rest_framework',
     'drf_yasg',
+    'stripe',
 ]
 
 MIDDLEWARE = [
