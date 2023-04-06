@@ -5,7 +5,7 @@ from .models import PhoneCompany, Subscriber
 class SubscriberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscriber
-        fields = ['phone_number', 'company']
+        fields = '__all__'
 
 
 class PhoneCompanySerializer(serializers.ModelSerializer):
@@ -13,4 +13,4 @@ class PhoneCompanySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PhoneCompany
-        fields = ['id', 'name', 'subscribers']
+        fields = '__all__'

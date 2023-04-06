@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.utils import timezone
 from .models import Company, Employee, Device, DeviceHistory
 
-
+# Company Model Tests
 class CompanyModelTests(TestCase):
     def test_company_name_max_length(self):
         company = Company(name='A' * 256)
@@ -13,7 +13,7 @@ class CompanyModelTests(TestCase):
         company = Company(name='abc company limt')
         self.assertEqual(str(company), 'abc company limt')
 
-
+# Employee Model Tests
 class EmployeeModelTests(TestCase):
     def setUp(self):
         self.company = Company.objects.create(name='abc company limt')
@@ -22,7 +22,7 @@ class EmployeeModelTests(TestCase):
         employee = Employee(company=self.company, name='Donal Tamp')
         self.assertEqual(str(employee), 'Donal Tamp')
 
-
+# Device Model Tests
 class DeviceModelTests(TestCase):
     def setUp(self):
         self.company = Company.objects.create(name='abc company limt')
@@ -45,7 +45,7 @@ class DeviceModelTests(TestCase):
         self.assertEqual(
             self.device.checked_out_by, self.employee)
 
-
+# Device History Model Tests
 class DeviceHistoryModelTests(TestCase):
     def setUp(self):
         self.company = Company.objects.create(name='abc company limt')
